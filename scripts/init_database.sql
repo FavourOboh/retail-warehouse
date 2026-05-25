@@ -1,13 +1,6 @@
 ================================================================
-  Create database and schemas 
+  ==================================================================
+  Creation of table by codes was not used because Bulk loading was 
+ restricted due to OS security policy; data ingested via ETL tool.
+==================================================================
 ================================================================
-CREATE DATABASE RetailWarehouse;
-
-USE RetailWarehouse ;
-
-CREATE SCHEMA bronze;
-GO
-CREATE SCHEMA silver;
-GO
-CREATE SCHEMA gold;
-GO
