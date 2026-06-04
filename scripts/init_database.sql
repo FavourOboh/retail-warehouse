@@ -5,6 +5,7 @@
 ======================================================================
 ======================================================================
 
+   
 ===========================================================================================================
 --Checking for nulls and duplicates , i found that there were in fact 300 duplicates of my primary key.
 I proceeded to do this
@@ -21,3 +22,18 @@ SELECT
 COUNT(*)
 FROM orders_cleaned;
 
+
+============================================================================================================
+--Fixing the caps for country segment, some started with caps and some started with lowercase.
+============================================================================================================
+UPDATE dbo.orders_cleaned
+SET country = 'Nigeria'
+WHERE LOWER(TRIM(country)) = 'nigeria';
+
+UPDATE dbo.orders_cleaned
+SET country = 'Kenya'
+WHERE LOWER(TRIM(country)) = 'kenya';
+
+UPDATE dbo.orders_cleaned
+SET country = 'Ghana'
+WHERE LOWER(TRIM(country)) = 'ghana';
