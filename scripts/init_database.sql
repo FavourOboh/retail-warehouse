@@ -98,9 +98,10 @@ UPDATE dbo.orders_cleaned
 SET order_status = 'Returned'
 WHERE LOWER(TRIM(order_status)) = 'returned'
 
-==========================================================================================================
-Fixing negatives in quantity
-==========================================================================================================
+===============================================================================================================
+Fixing negatives in quantity; After discussing with the team, I was told that the negatives were input errors
+  and i could go ahead and make them positive integers 
+===============================================================================================================
 
 UPDATE dbo.orders_cleaned
 SET quantity = ABS(quantity)
