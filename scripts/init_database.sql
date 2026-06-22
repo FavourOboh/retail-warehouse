@@ -107,3 +107,25 @@ UPDATE dbo.orders_cleaned
 SET quantity = ABS(quantity)
 WHERE quantity < 0;
 
+
+==============================================================================================================
+
+=============================================================================================================
+UPDATE dbo.orders_cleaned
+SET order_date = NULL
+WHERE order_date = 'unknown';
+
+UPDATE dbo.orders_cleaned
+SET unit_price = ABS(unit_price)
+WHERE unit_price < 0;
+
+UPDATE dbo.orders_cleaned
+SET total_amount = unit_price * quantity
+WHERE unit_price IS NOT NULL
+  AND quantity IS NOT NULL;
+
+UPDATE dbo.orders_cleaned
+SET unit_price = ROUND(unit_price, 1);
+
+UPDATE dbo.orders_cleaned
+SET total_amount = ROUND(total_amount, 1);
