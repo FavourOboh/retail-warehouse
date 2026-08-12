@@ -118,24 +118,19 @@ WHERE order_date IS NOT NULL;
 
 --------------------------------------------------------------------------------
 
-CREATE TABLE dbo.fact_orders 
+CREATE TABLE dbo.fact_orders
 (
-
     order_id INT PRIMARY KEY,
-
     customer_key INT,
-
     product_key INT,
-
     payment_key INT,
-
     status_key INT,
-
     date_key INT,
-
     quantity INT,
-
     unit_price DECIMAL(10,2),
+    discount_pct DECIMAL(5,2),
+    total_amount DECIMAL(10,2)
+);
 
     discount_pct DECIMAL(5,2),
 
